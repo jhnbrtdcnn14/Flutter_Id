@@ -36,6 +36,7 @@ class _FrontPageState extends State<FrontPage> {
           child: Center(
             child: Column(
               children: [
+                // HEADER WITH LOGO
                 const Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -106,6 +107,7 @@ class _FrontPageState extends State<FrontPage> {
                           ]),
                     ]),
                 const SizedBox(height: 30),
+                // STUDENT PICTURE
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -126,6 +128,7 @@ class _FrontPageState extends State<FrontPage> {
                   ],
                 ),
                 const SizedBox(height: 30),
+                // STUDENT INFORMATIONS
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -194,6 +197,7 @@ class _FrontPageState extends State<FrontPage> {
                 const SizedBox(
                   height: 10,
                 ),
+                // BUTTON
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -217,6 +221,7 @@ class _FrontPageState extends State<FrontPage> {
                 const SizedBox(
                   height: 10,
                 ),
+                // ISO LOGO
                 // Row(
                 //   mainAxisAlignment: MainAxisAlignment.end,
                 //   children: <Widget>[

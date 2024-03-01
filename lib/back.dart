@@ -15,6 +15,7 @@ class BackPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
+                    // FIRST ROW
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,8 +28,12 @@ class BackPage extends StatelessWidget {
                             child: const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                Text('BLOOD TYPE'),
-                                Text('NA')
+                                Text('BLOOD TYPE',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                Text('NA',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold))
                               ],
                             )),
                         Container(
@@ -39,19 +44,24 @@ class BackPage extends StatelessWidget {
                             child: const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                Text('BIRTH DATE'),
-                                Text('02/05/2003')
+                                Text('BIRTH DATE',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                Text('02/05/2003',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold))
                               ],
                             ))
                       ],
                     ),
+                    // SECOND ROW
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Container(
                             decoration:
                                 BoxDecoration(border: Border.all(width: 3)),
-                            height: 150,
+                            height: 130,
                             width: 320,
                             child: const Padding(
                               padding: EdgeInsets.all(8.0),
@@ -59,38 +69,61 @@ class BackPage extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Text('In Case of Emergency Please Notify:'),
-                                  Text('Jeby P. Decinan'),
-                                  Text('Lawis, Alaska, Mambaling, Cebu City'),
-                                  SizedBox(height: 40),
-                                  Text('+639229201654'),
+                                  Text('Jeby P. Decinan',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold)),
+                                  Text('Lawis, Alaska, Mambaling, Cebu City',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold)),
+                                  SizedBox(height: 25),
+                                  Text('+639229201654',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold)),
                                 ],
                               ),
                             ))
                       ],
                     ),
                     const SizedBox(height: 20),
+                    // DATE ISSUED
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text('Date Issued:'),
+                        Text('Date Issued:',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16)),
                         SizedBox(width: 10),
-                        Text('08/25/2021'),
+                        Text('08/25/2021',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                                decoration: TextDecoration.underline)),
                       ],
                     ),
+                    const SizedBox(height: 10),
+                    // VALIDITY
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text('VALID UNTIL:',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16)),
+                        SizedBox(width: 10),
+                        Text('08/25/2025',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                                decoration: TextDecoration.underline)),
+                      ],
+                    ),
+                    // NOTE
                     const SizedBox(height: 10),
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text('VALID UNTIL:'),
-                        SizedBox(width: 10),
-                        Text('08/25/2025'),
-                      ],
-                    ),
-                    const SizedBox(height: 10),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text('UNLESS EARLIER REVOKED OR SURRENDERED')
+                        Text('UNLESS EARLIER REVOKED OR SURRENDERED',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16))
                       ],
                     ),
                     // FIRST BULLET
@@ -278,6 +311,7 @@ class BackPage extends StatelessWidget {
                             ),
                           ],
                         ),
+                        // BUTTON
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
