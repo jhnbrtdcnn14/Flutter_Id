@@ -1,10 +1,12 @@
+import 'package:activity/MyDialog.dart';
 import 'package:flutter/material.dart';
 import 'back.dart';
 import 'buttons.dart';
 
-void main() => runApp(const MaterialApp(
-      home: FrontPage(),
-    ));
+void main() => runApp(MaterialApp(home: const FrontPage(), routes: {
+      '/main': (context) => const FrontPage(),
+      '/back': (context) => const BackPage(),
+    }));
 
 class FrontPage extends StatefulWidget {
   const FrontPage({super.key});
@@ -198,26 +200,30 @@ class _FrontPageState extends State<FrontPage> {
                   height: 10,
                 ),
                 // BUTTON
+                // Main.dart snippet
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     SizedBox(
-                        height: 40,
-                        width: MediaQuery.of(context).size.width *
-                            0.5, // Set the width as needed
-                        child: MyButton(
-                          content: 'Go to Back',
-                          onPressed: () {
-                            // Navigate to the BackPage when the button is clicked
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => BackPage()),
-                            );
-                          },
-                        )),
+                      height: 40,
+                      width: MediaQuery.of(context).size.width *
+                          0.5, // Set the width as needed
+                      child: MyButton(
+                        content: 'Go to Back',
+                        onPressed: () {
+                          // Using MyDialog to show the dialog directly
+                          MyDialog.showCustomDialog(context,
+                              toastMessageOnYes: "Navigating to backpage...",
+                              path: '/back',
+                              title: 'Confirmation',
+                              content:
+                                  'Are you sure you want to go to the back page?');
+                        },
+                      ),
+                    ),
                   ],
                 ),
+
                 const SizedBox(
                   height: 10,
                 ),

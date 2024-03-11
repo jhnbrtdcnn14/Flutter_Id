@@ -1,4 +1,7 @@
-import 'front.dart';
+import 'package:activity/MyDialog.dart';
+import 'package:activity/Mytoast.dart';
+
+import 'main.dart';
 import 'buttons.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +11,7 @@ class BackPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.white,
         body: Padding(
             padding: const EdgeInsets.fromLTRB(10, 50, 10, 0),
             child: Center(
@@ -123,7 +127,7 @@ class BackPage extends StatelessWidget {
                       children: <Widget>[
                         Text('UNLESS EARLIER REVOKED OR SURRENDERED',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16))
+                                fontWeight: FontWeight.bold, fontSize: 14))
                       ],
                     ),
                     // FIRST BULLET
@@ -141,7 +145,7 @@ class BackPage extends StatelessWidget {
                             Text(
                               'The person whose picture and signature appear hereon is a',
                               style: TextStyle(
-                                fontSize: 11.0,
+                                fontSize: 10.0,
                               ),
                             ),
                           ],
@@ -152,13 +156,13 @@ class BackPage extends StatelessWidget {
                             Text(
                               'bonafide student of ',
                               style: TextStyle(
-                                fontSize: 11.0,
+                                fontSize: 10.0,
                               ),
                             ),
                             Text(
                               'Cebu Technological University',
                               style: TextStyle(
-                                fontSize: 11.0,
+                                fontSize: 10.0,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -182,18 +186,18 @@ class BackPage extends StatelessWidget {
                             Text(
                               'This card is non transferable property of ',
                               style: TextStyle(
-                                fontSize: 11.0,
+                                fontSize: 10.0,
                               ),
                             ),
                             Text(
                               'CTU ',
                               style: TextStyle(
-                                  fontSize: 11.0, fontWeight: FontWeight.bold),
+                                  fontSize: 10.0, fontWeight: FontWeight.bold),
                             ),
                             Text(
                               'and must be',
                               style: TextStyle(
-                                fontSize: 11.0,
+                                fontSize: 10.0,
                               ),
                             ),
                           ],
@@ -204,7 +208,7 @@ class BackPage extends StatelessWidget {
                             Text(
                               'surrendered upon graduation or transfer.',
                               style: TextStyle(
-                                fontSize: 11.0,
+                                fontSize: 10.0,
                               ),
                             ),
                           ],
@@ -227,7 +231,7 @@ class BackPage extends StatelessWidget {
                             Text(
                               'Card must be presented upon entry and must worn when ',
                               style: TextStyle(
-                                fontSize: 11.0,
+                                fontSize: 10.0,
                               ),
                             ),
                           ],
@@ -238,7 +242,7 @@ class BackPage extends StatelessWidget {
                             Text(
                               'inside the university premises. ',
                               style: TextStyle(
-                                fontSize: 11.0,
+                                fontSize: 10.0,
                               ),
                             ),
                           ],
@@ -261,7 +265,7 @@ class BackPage extends StatelessWidget {
                             Text(
                               'Tampering invalidates this card and subject to disciplinary ',
                               style: TextStyle(
-                                fontSize: 11.0,
+                                fontSize: 10.0,
                               ),
                             ),
                           ],
@@ -272,7 +276,7 @@ class BackPage extends StatelessWidget {
                             Text(
                               'action.',
                               style: TextStyle(
-                                fontSize: 11.0,
+                                fontSize: 10.0,
                               ),
                             ),
                           ],
@@ -295,7 +299,7 @@ class BackPage extends StatelessWidget {
                             Text(
                               'In case of loss, please report to SAO office.',
                               style: TextStyle(
-                                fontSize: 11.0,
+                                fontSize: 10.0,
                               ),
                             ),
                           ],
@@ -322,12 +326,13 @@ class BackPage extends StatelessWidget {
                                 child: MyButton(
                                   content: 'Back to front',
                                   onPressed: () {
-                                    // Navigate to the BackPage when the button is clicked
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => FrontPage()),
-                                    );
+                                    MyDialog.showCustomDialog(context,
+                                        toastMessageOnYes:
+                                            'Going back to front...',
+                                        path: '/main',
+                                        title: 'Confirmation',
+                                        content:
+                                            'Are you sure you want to exit?');
                                   },
                                 )),
                           ],
